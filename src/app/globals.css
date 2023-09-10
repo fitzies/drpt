@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "PolySans Neutral";
+  src: url("https://db.onlinewebfonts.com/t/03bd7255184e8e8ad4d2a521fa920b6c.eot");
+  src: url("https://db.onlinewebfonts.com/t/03bd7255184e8e8ad4d2a521fa920b6c.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/03bd7255184e8e8ad4d2a521fa920b6c.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/03bd7255184e8e8ad4d2a521fa920b6c.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/03bd7255184e8e8ad4d2a521fa920b6c.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/03bd7255184e8e8ad4d2a521fa920b6c.svg#PolySans Neutral")
+      format("svg");
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  @apply border border-gray px-4 py-1 rounded-xl text-gray duration-300 hover:border-primary hover:text-white hover:bg-primary;
+}
+
+.button-xl {
+  @apply px-8 py-2 text-xl !important;
+}
+
+.bounce {
+  @apply hover:-translate-y-1 duration-150;
+}
+
+.link {
+  @apply text-gray duration-300 hover:text-white cursor-pointer;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
