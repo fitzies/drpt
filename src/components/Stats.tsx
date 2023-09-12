@@ -7,7 +7,7 @@ const Stats = () => {
   ];
 
   return (
-    <div className="w-full flex gap-4 justify-between items-center my-10">
+    <div className="w-full flex md:flex-row flex-col gap-4 justify-between items-center mb-10">
       {stats.map((i) => {
         return (
           <div className="w-1/4 text-center flex flex-col gap-3" key={i.stat}>

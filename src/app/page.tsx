@@ -5,12 +5,12 @@ import Stats from "@/components/Stats";
 const Page = ({ params }: { params: { slug: string } }) => {
   return (
     <>
-      <div className="w-screen px-72 py-16 flex flex-col gap-6">
-        <h1 className="text-8xl">
+      <div className="w-screen md:px-72 px-12 py-16 flex flex-col gap-6 ">
+        <h1 className="md:text-8xl text-6xl">
           Liquid Rewards,
           <br /> Solid Gains
         </h1>
-        <p className="text-xl text-gray">
+        <p className="md:text-xl text-md text-gray">
           DRPT operates on a permissionless model, fostering economic inclusion
           and enabling wealth accumulation through passive{" "}
           <span className="italic">cash flow</span>. Experience parabolic
@@ -22,7 +22,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
         </div>
         <div className="w-full h-[1.25px] bg-gray my-16 rounded-full"></div>
 
-        <div className="w-full flex justify-between gap-2">
+        <div className="w-full flex md:flex-row flex-col justify-between md:gap-2 gap-8">
           {Array(4)
             .fill(0)
             .map((_, i) => {
@@ -39,8 +39,11 @@ const Page = ({ params }: { params: { slug: string } }) => {
                 "Thoroughly tested in real-world scenarios",
               ];
               return (
-                <div className="w-1/4 flex flex-col gap-2 px-3" key={i}>
-                  <h2 className="text-xl">{titles[i]}</h2>
+                <div
+                  className="md:w-1/4 w-full text-center flex flex-col gap-2 md:px-3"
+                  key={i}
+                >
+                  <h2 className="md:text-xl text-md">{titles[i]}</h2>
                   <p className="text-gray">{texts[i]}</p>
                 </div>
               );
@@ -48,7 +51,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
       <Marquee />
-      <div className="w-screen px-72 py-16 flex flex-col gap-6 items-center">
+      <div className="w-screen md:px-72 py-16 flex flex-col gap-6 items-center">
         {/* <h2 className="text-6xl">Current Statistics</h2> */}
         <Stats />
         <Graph />
